@@ -2,7 +2,6 @@ package unitydirectionkit.mobilewebview;
 
 import android.app.Activity;
 import android.graphics.SurfaceTexture;
-import android.graphics.SurfaceTexture.OnFrameAvailableListener;
 import android.util.Log;
 import android.view.Surface;
 import android.view.View;
@@ -212,6 +211,13 @@ public class MobileWebView
     {
         if (this.mWebView != null) {
             this.mWebView.setInputText(text);
+        }
+    }
+
+    public void exportCallFunction(String functionName)
+    {
+        if (this.mWebView != null) {
+            this.mWebView.callFunction(functionName);
         }
     }
 

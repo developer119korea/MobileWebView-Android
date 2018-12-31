@@ -353,6 +353,16 @@ public class GLWebViewNative
         });
     }
 
+    public void callFunction(final String functionName)
+    {
+        this.mActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                GLWebViewNative.this.loadUrl(WebViewScripts.callFunction(functionName));
+            }
+        });
+    }
+
     public void pageClickTo(final float x, final float y)
     {
         this.mActivity.runOnUiThread(new Runnable()

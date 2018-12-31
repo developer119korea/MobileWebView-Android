@@ -39,4 +39,9 @@ public class WebViewScripts
     {
         return "javascript:(function(){window.scrollBy(" + x + "," + y + ");})()";
     }
+
+    public static  String callFunction(String functionName)
+    {
+        return "javascript:"+functionName+"()";
+    }
 }
