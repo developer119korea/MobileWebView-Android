@@ -40,8 +40,21 @@ public class WebViewScripts
         return "javascript:(function(){window.scrollBy(" + x + "," + y + ");})()";
     }
 
-    public static  String callFunction(String functionName)
+    public static String callFunction(String functionName, String... args)
     {
-        return "javascript:"+functionName+"()";
+        StringBuilder sb = new StringBuilder();
+        sb.append("javascript:");
+        sb.append(functionName);
+        sb.append("(");
+        for(int i=0; i<args.length;i++) {
+            if(i>0) {
+                sb.append(",");
+            }
+            sb.append("'");
+            sb.append(args[i]);
+            sb.append("'");
+        }
+        sb.append(")");
+        return sb.toString();
     }
 }

@@ -26,7 +26,7 @@ public abstract interface GLWebView
 
     public abstract void setInputText(String paramString);
 
-    public abstract void callFunction(String functionName);
+    public abstract void callFunction(String functionName, String... args);
 
     public abstract void pageClickTo(float paramFloat1, float paramFloat2);
 

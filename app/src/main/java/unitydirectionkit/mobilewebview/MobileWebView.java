@@ -214,10 +214,10 @@ public class MobileWebView
         }
     }
 
-    public void exportCallFunction(String functionName)
+    public void exportCallFunction(String functionName, String... args)
     {
         if (this.mWebView != null) {
-            this.mWebView.callFunction(functionName);
+            this.mWebView.callFunction(functionName, args);
         }
     }
 

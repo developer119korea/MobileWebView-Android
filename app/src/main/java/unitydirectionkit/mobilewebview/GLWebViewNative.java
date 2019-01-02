@@ -353,12 +353,13 @@ public class GLWebViewNative
         });
     }
 
-    public void callFunction(final String functionName)
+    public void callFunction(final String functionName, final String... args)
     {
         this.mActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                GLWebViewNative.this.loadUrl(WebViewScripts.callFunction(functionName));
+                String url = WebViewScripts.callFunction(functionName, args);
+                GLWebViewNative.this.loadUrl(url);
             }
         });
     }
